@@ -9,7 +9,6 @@ export const projectRoute = express.Router();
 projectRoute.use(express.json());
 
 // GET
-
 projectRoute
 .get("/", async (_req: Request, res: Response) => {
     try {
