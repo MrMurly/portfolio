@@ -14,34 +14,29 @@ projectRoute.use(express.json());
 projectRoute
 .get("/", async (_req: Request, res: Response) => {
     try {
-        const projects = await(Project.find({}));
+        const projects = await(Project.find({})) as IProject[];
         
         res.status(200).send(projects);
     } catch (error: any) {
         res.status(500).send(error.message);
     }   
 })
-.get("/:id", async (req: Request, res: Response) => {
-    const id = req?.query?.id;
+.get("/search/", async (req: Request, res: Response) => {
+    const id = req?.query?.id as string;
+    const name = req?.query?.name as string;
+    console.log(id, name);
     try {
-        const project = await Project.findById(id) as IProject;
-
+        const regex = new RegExp(name, 'i');
+        const project = name ? 
+            await Project.find({projectname: { $regex : regex }}) as IProject[] :
+            await Project.findById(id) as IProject;
+        
+        
         if (project) {
             res.status(200).send(project);  
         }
     } catch (error: any) {
-        res.status(404).send(`Unable to find matching document with id: ${req.params.id}`);
-    }
-})
-.get("/:name", async (req: Request, res: Response) => {
-    const name = req?.query?.name;
-
-    try {
-        const projects = await Project.find({projectname: { $regex : `/${name}/i` }});
-
-        res.status(200).send(projects);
-    } catch ( error: any ) {
-        res.status(500).send(error.message);
+        res.status(404).send(`Unable to find matching document with id: ${id} or name: ${name}`);
     }
 })
 // POST
