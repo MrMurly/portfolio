@@ -1,5 +1,6 @@
 import { isContentEditable } from "@testing-library/user-event/dist/utils"
 import { useEffect, useState } from "react"
+import { Techniques } from "./techinques"
 
 interface ProjectProps {
     id: string
@@ -12,7 +13,7 @@ interface IProject {
     enddate: Date,
     coursecode: string,
     coursename: string,
-    techniques: [],
+    techniques: [string],
     shortdescription: string,
     longdescription: string,
     smallimage: string,
@@ -38,6 +39,7 @@ export function Project({id} : ProjectProps) {
                 <p className="projectGroup">Group size: {content?.groupsize}</p>
                 <p className="projectDate">{content?.startdate.toString()}</p>
                 <a className="projectLink" href={content?.link}>Project page</a>
+                <Techniques techniques={content?.techniques}/>
             </div>
             <img src={content?.largeimage} className="projectImage"/>
         </div>    

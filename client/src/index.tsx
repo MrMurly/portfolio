@@ -5,13 +5,15 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { Project } from "./components/project";
+import { Projects } from "./components/projects";
 import "./index.css";
 import Root from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Project id="63aadc24f5ea4ae6bd02ec48"/>,
   },
 ]);
 

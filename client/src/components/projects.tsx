@@ -5,6 +5,7 @@ interface IProject {
     projectname: string,
     shortdescription: string,
     smallimage: string,
+    techniques: [string]
 }
 
 export function Projects() {
@@ -24,6 +25,7 @@ export function Projects() {
                 projectname={content.projectname}
                 shortdescription={content.shortdescription}
                 smallimage={content.smallimage}
+                techniques={content.techniques}
             />)}
 
         </div>

@@ -10,21 +10,61 @@
 html{
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
-.projectList{
+.root {
+  background-color: var(--color-background-primary);    
+}
+.parallax {
+  background-image: url(https://static.wixstatic.com/media/fb2f83_f9975c6f211840beb571b822154fc4ce~mv2.png/v1/fit/w_673%2Ch_835%2Cal_c/file.png);
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flexContainer{
   display: flex;
-  justify-content: space-evenly;
+  justify-content:center;
+}
+.introduction, .Name {
+  color: var(--color-font-primary);
+  text-align: center;
+}
+.Name {
+  font-weight: bold;
+  font-size:xx-large;
+}
+.introduction {
+  font-size: large;
+}
+
+.ProjectSearch{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.SearchField {
+  width: 70%;
+}
+.SearchButton {
+  width: fit-content;
+}
+.projectList{
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
   margin-top: 5rem;
 }
 
 .projectCard{
   position: relative;
   background-color: var(--color-background-secondary);
-  margin: 1rem;
+  margin: 2rem;
   flex: 1 0 25rem;
   max-width: 30rem;
-  max-height: 50rem;
   transition: 0.2s;
 }
 
@@ -33,10 +73,24 @@ html{
   box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
   cursor: pointer;
 }
+.projectCardTechniques {
+  display: flex;
+  justify-content: left;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+.technique {
+  background-color: var(--color-accent-primary);
+  color: var(--color-font-primary);
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.5rem;
+}
 
 .projectCardImage{
+  margin-left: 5%;
   margin-top: 2rem;
-  max-width: 95%;
+  max-width: 90%;
   height: auto;
 }
 
@@ -45,11 +99,11 @@ html{
 }
 .projectCardDescription{
   font-size: 1.5rem;
-  color: black;
+  color: var(--color-accent-primary);
 }
 
 .projectCardName{
-  color: black;
+  color: var(--color-font-primary);
   font-size: 2rem;
   font-weight: bold;
 }
@@ -82,11 +136,11 @@ html{
   color: var(--color-accent-primary);
   font-size: 1.7rem;
   text-align: left;
-  max-width: 100mm;
 }
 
 .project__content {
   margin: 2rem;
+  max-width: 100mm;
 }
 
 .projectGroup, .projectDate {
