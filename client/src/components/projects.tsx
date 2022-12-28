@@ -13,7 +13,6 @@ export function Projects() {
     useEffect(() => {
         fetch('/project').then((res: Response) => res.json().then((data: any) => {
             if(!data) return;
-
             setContents(data);
         }))
     }, [])

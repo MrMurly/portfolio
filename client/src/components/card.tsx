@@ -8,11 +8,11 @@ interface CardProps {
 export function Card( {id, projectname, shortdescription, smallimage} : CardProps) {
     return (
         <div id={id} className="projectCard">
-            <img src={smallimage} className="projectImage"/>
+            <img src={smallimage} className="projectCardImage"/>
 
             <div className="projectCard__content">
-                <h3 className="projectName">{projectname}</h3>
-                <div className="projectDescription">{shortdescription}</div>
+                <h3 className="projectCardName">{projectname}</h3>
+                <div className="projectCardDescription">{shortdescription}</div>
             </div>
         </div>
     )

@@ -1,19 +1,15 @@
 :root {
-  --color-grey-primary: #f0f0f0;
-  --color-yellow-primary: goldenrod;   
-  --color-orange-primary: darkorange;
-  --color-green-primary: mediumseagreen;
+  --color-accent-primary: #05386B;
+  --color-accent-secondary: #379683;
+  --color-background-primary: #5CDB95;
+  --color-background-secondary: #8EE4AF;
+  --color-font-primary: #EDF5E1;
+
 }
  
 html{
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.App{
-  display: grid;
-  grid-template-columns: 350px 350px 350px;
-  justify-content: center;
 }
 
 .projectList{
@@ -24,7 +20,7 @@ html{
 
 .projectCard{
   position: relative;
-  background-color: var(--color-grey-primary);
+  background-color: var(--color-background-secondary);
   margin: 1rem;
   flex: 1 0 25rem;
   max-width: 30rem;
@@ -35,24 +31,94 @@ html{
 .projectCard:hover{
   transform: translateY(-0.5rem);
   box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
+  cursor: pointer;
 }
 
-.projectImage{
+.projectCardImage{
   margin-top: 2rem;
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
 }
 
 .projectCard__content {
   margin: 2rem;
 }
-.projectDescription{
+.projectCardDescription{
   font-size: 1.5rem;
-  font-weight: bold;
   color: black;
 }
 
-.projectName{
+.projectCardName{
   color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Project {
+  background-color: var(--color-background-primary);
+  display: flex;
+  justify-content: left;
+  width:fit-content;
+  padding-bottom: 5mm;
+  padding-right: 5mm;
+}
+
+.projectName{
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--color-font-primary);
+  text-transform: uppercase;
+}
+
+.projectImage{
+  margin-top: 5rem;
+  height: auto;
+  max-height: 150mm;
+  width: auto;
+  max-width: 150mm;
+}
+
+.projectDescription{
+  color: var(--color-accent-primary);
+  font-size: 1.7rem;
+  text-align: left;
+  max-width: 100mm;
+}
+
+.project__content {
+  margin: 2rem;
+}
+
+.projectGroup, .projectDate {
   font-size: 1.5rem;
+  color: var(--color-accent-primary);
+}
+
+.projectLink {
+  font-size: 1.5rem;
+}
+
+.Navigation {
+  font-size: 3rem;
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+.Navigation:hover{
+  cursor: pointer;
+  color: var(--color-font-primary);
+}
+.NavigationBar {
+  background-color: var(--color-accent-secondary);
+  display: flex;
+  justify-content: left; 
+}
+.NavLinks {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.NavHome {
+  width: 30%;
+  display: flex;
+  justify-content: center;
 }
