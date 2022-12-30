@@ -8,12 +8,13 @@ import {
 import { Project } from "./components/project";
 import { Projects } from "./components/projects";
 import "./index.css";
+import { ProjectPage } from "./routes/project-page";
 import Root from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Project id="63aadc24f5ea4ae6bd02ec48"/>,
+    element: <ProjectPage/>,
   },
 ]);
 
